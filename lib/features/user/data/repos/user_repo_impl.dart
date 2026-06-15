@@ -25,6 +25,7 @@ class UserRepoImpl extends GetUserRepo {
     if (await networkInfo.isConnected) {
       try {
         final response = await remoteUser.getUser(params: params);
+        localUser.saveUser(user: response);
         return right(response);
       } on ServerException catch (e) {
         return left(Failure(errMessage: e.errorModel.errorMessage));

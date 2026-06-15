@@ -1,6 +1,7 @@
 class EndPoints {
   static String baseUrl = "https://jsonplaceholder.typicode.com/";
   static String user = "users";
+  //https://jsonplaceholder.typicode.com/users/
 }
 
 class ApiKeys {

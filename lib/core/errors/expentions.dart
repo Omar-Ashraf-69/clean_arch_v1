@@ -63,7 +63,7 @@ class UnknownException extends ServerException {
 void handleDioException(DioException e) {
   switch (e.type) {
     case DioExceptionType.connectionError:
-      throw ConnectionErrorException(ErrorModel.fromJson(e.response!.data));
+      throw ConnectionErrorException(ErrorModel.fromJson(e.response?.data??{}));
     case DioExceptionType.badCertificate:
       throw BadCertificateException(ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.connectionTimeout:

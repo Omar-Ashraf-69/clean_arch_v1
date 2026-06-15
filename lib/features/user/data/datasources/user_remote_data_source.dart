@@ -10,6 +10,6 @@ class UserRemoteDataSource {
 
   Future<UserModel> getUser({required UserParams params}) async {
     final response = await api.get("${EndPoints.user}/${params.id}");
-    return UserModel.fromJson(response);
+    return UserModel.fromJson(response.data);
   }
 }

@@ -8,7 +8,7 @@ class UserLocalDataSource {
   final CacheHelper cacheHelper;
   final String key = "cachedUser";
   UserLocalDataSource({required this.cacheHelper});
-  Future<UserModel> getUser()  {
+  Future<UserModel> getUser() {
     final cachedUser = cacheHelper.getDataString(key: key);
     if (cachedUser != null) {
       return Future.value(UserModel.fromJson(json.decode(cachedUser)));
